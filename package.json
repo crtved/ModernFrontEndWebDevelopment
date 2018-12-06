@@ -29,7 +29,9 @@
     "url": "https://artisawesm.com/"
   },
   "bundleDependencies": false,
-  "dependencies": {},
+  "dependencies": {
+    "typed.js": "^2.0.9"
+  },
   "deprecated": false,
   "description": "An automation tool for creating single page applications.",
   "devDependencies": {

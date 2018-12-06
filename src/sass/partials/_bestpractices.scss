@@ -1,0 +1,44 @@
+div._init_best_practices {
+  padding: 3em 0;
+  position: relative;
+  height: 100vh;
+  div._init_inner_best_practices {
+    & > p._init_title {
+      text-align: right;
+      font-size: 125px;
+      z-index: 2;
+      transform: translateX(100px) translateY(50px);
+      &:after {
+        right: 0;
+        left: auto;
+      }
+    }
+    ._init_best_practices_content {
+      & > p {
+        font: $roboto;
+        color: $tertiary;
+        font-size: 30px;
+      }
+    }
+    ._init_video_side {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: $secondary;
+      height: 70%;
+      width: 500px;
+      ._init_video_content {
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        transform: translateX(-100px) translateY(-100px);
+        overflow: hidden;
+        & > video {
+          height: 100%;
+          width: auto;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

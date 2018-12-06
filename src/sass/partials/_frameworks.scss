@@ -1,0 +1,36 @@
+._init_frameworks {
+  padding: 3em 0;
+  position: relative;
+  height: 100vh;
+  ._init_inner_frameworks {
+    ._init_title {
+      text-align: right;
+      &:after {
+        right: 0;
+        left: auto;
+      }
+    }
+    ._init_frameworks_content {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 1em 0;
+      ._init_angular,
+      ._init_vue,
+      ._init_react {
+        flex-basis: 33.33%;
+        max-width: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > img {
+          width: 100%;
+          height: 50%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import Head from './Head';
 
 class App extends Component {
+  state = {
+    intro: 'modern web dev',
+  };
   render() {
-    return (
-      <React.Fragment>
-        <Head />
-      </React.Fragment>
-    );
+    const { intro } = this.state;
+    return <React.Fragment>{intro}</React.Fragment>;
   }
 }
 

@@ -1,5 +1,8 @@
-@import "partials/variables";
-@import "partials/responsive";
-@import "node_modules/bootstrap/scss/bootstrap";
-@import "partials/custom";
-@import "partials/init";
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'partials/variables';
+@import 'partials/responsive';
+@import 'partials/init';
+@import 'partials/button';
+@import 'partials/bestpractices';
+@import 'partials/buildtools';
+@import 'partials/frameworks';

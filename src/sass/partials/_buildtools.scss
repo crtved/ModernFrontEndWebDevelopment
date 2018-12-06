@@ -1,0 +1,39 @@
+._init_build_tools {
+  padding: 3em 0;
+  position: relative;
+  height: 100vh;
+  ._init_inner_build_tools {
+    & > p._init_title {
+      z-index: 2;
+      transform: translateX(-100px);
+      &:after {
+        background-color: $tertiary;
+      }
+    }
+    ._init_build_side {
+      background-color: $secondary;
+      height: 85%;
+      width: 450px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      ._init_terminal {
+        height: 50%;
+        position: absolute;
+        width: auto;
+        bottom: 130px;
+        right: -80%;
+        background-color: #efefef;
+      }
+    }
+    ._init_build_content {
+      text-align: right;
+      & > p {
+        font: $roboto;
+        color: $tertiary;
+        font-size: 40px;
+      }
+    }
+  }
+}

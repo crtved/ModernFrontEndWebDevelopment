@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <title>Initializr</title>
+  <title>Modern Web Dev | Art San Diego</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0" />
   <meta name="description" content="A Front End Web Development tool that automates minification and bundling of assets, provides Search Engine Optimized boilerplate and promotes modular coding with the help of the latest JS Frameworks." />
   <meta name="keywords" content="initializr, artisawesm, automation, build tool, front end, scss, es6, html, react, vue, javascript, bootstrap, seo, boilerplate, frameworks, web development, web" />
@@ -36,20 +36,96 @@
 </head>
 
 <body>
-  <div class="init dark">
-    <div id="particles-js"></div>
-
-    <img id="toggle" class="branding" src="./assets/images/branding.png" alt="" />
-    <div class="title">
-      <div id="header" class="header"></div>
-      <div id="links" class="links">
+  <div class="_init_container" id="introduction">
+    <img class="_init_side_image" src="./assets/images/sideart.png" alt="Art">
+    <div class="_init_nav">
+      <div class="_init_nav_container">
+        <a id="nav_intro" class="_init_nav_item active" href="#introduction">Introduction</a>
+        <a id="nav_bp" class="_init_nav_item" href="#best_practices">Best Practices</a>
+        <a id="nav_bt" class="_init_nav_item" href="#build_tools">Build Tools</a>
+        <a id="nav_f" class="_init_nav_item" href="#frameworks">Frameworks</a>
+      </div>
+    </div>
+    <div class="_init_inner_container container">
+      <div class="_init_burger">
+        <span class="top"></span>
+        <span class="mid"></span>
+        <span class="bot"></span>
+      </div>
+      <div class="_init_indicators">
+        <a id="intro" class="_init_indicators_item active" href="#introduction">Introduction</a>
+        <a id="bp" class="_init_indicators_item" href="#best_practices">Best practices</a>
+        <a id="bt" class="_init_indicators_item" href="#build_tools">Build Tools</a>
+        <a id="f" class="_init_indicators_item" href="#frameworks">Frameworks</a>
+      </div>
+      <div class="_init_introduction_container">
+        <div class="_init_introduction" id="Introduction">
+          <p class="_init_sub">Let's talk about the</p>
+          <h1 class="_init_title" id="introductionTitle"></h1>
+          <p class="_init_description">I'm <span id="description"></span></p>
+          <a class="_init_button" href="#best_practices">Let's Start</a>
+        </div>
+      </div>
+      <div class="_init_social_container">
+        <a class="_init_social_item" target="_blank" href="https://artisawesm.com">website</a>
+        <a class="_init_social_item" target="_blank" href="https://dev.to/artisawesm">dev</a>
+        <a class="_init_social_item" target="_blank" href="https://github.com/artisawesm">github</a>
       </div>
     </div>
   </div>
-
-  <!-- Particles JS -->
-  <script type="text/javascript" src="./assets/vendor/particles.js"></script>
-
+  <div id="best_practices" class="_init_best_practices _init_container">
+    <div class="_init_inner_best_practices container">
+      <p class="_init_title">Best Practices</p>
+      <div class="_init_best_practices_content">
+        <p>GIT</p>
+        <p>Preprocessor/Transpiler</p>
+        <p>Semantic Markup</p>
+        <p>SEO</p>
+        <p>Google Analytics</p>
+        <p>SemVer</p>
+        <p>Mobile Responsiveness</p>
+        <p>Code Minification</p>
+        <p>Directory Structure</p>
+        <p>Descriptive Comments</p>
+      </div>
+      <div class="_init_video_side">
+        <div class="_init_video_content">
+          <video src="./assets/images/coding.mp4" autoplay loop></video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="build_tools" class="_init_build_tools _init_container">
+    <div class="_init_inner_build_tools container">
+      <p class="_init_title">Build Tools</p>
+      <div class="_init_build_side">
+        <img class="_init_terminal" src="./assets/images/Terminal.png" alt="terminal">
+      </div>
+      <div class="_init_build_content">
+        <p>Gulp js</p>
+        <p>Webpack</p>
+        <p>Babel</p>
+        <p>Node js</p>
+        <p>Packages</p>
+      </div>
+    </div>
+  </div>
+  <div id="frameworks" class="_init_frameworks _init_container">
+    <div class="_init_inner_frameworks container">
+      <p class="_init_title">Frameworks</p>
+      <div class="_init_frameworks_content">
+        <div class="_init_angular">
+          <img src="./assets/images/angular.png" alt="Angular">
+        </div>
+        <div class="_init_vue">
+          <img src="./assets/images/react.png" alt="Angular">
+        </div>
+        <div class="_init_react">
+          <img src="./assets/images/vue.png" alt="Angular">
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Main js file // With jQuery and Bootstrap.js(4) -->
   <script type="text/javascript" src="./assets/js/app.min.js"></script>
 
