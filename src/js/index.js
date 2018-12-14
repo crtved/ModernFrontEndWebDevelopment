@@ -5,14 +5,24 @@ import jQuery from 'jquery';
 window.$ = jQuery;
 import 'bootstrap';
 import Typed from 'typed.js';
-
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
+import Nav from './components/Nav';
+import Indicator from './components/Indicator';
+import Social from './components/Social';
+import BestPractices from './components/BestPractices';
+import BuildTools from './components/BuildTools';
+import Frameworks from './components/Frameworks';
 
-render(<App />, document.getElementById('introductionTitle'));
+render(<App />, document.getElementById('InitIntroduction'));
+render(<Indicator />, document.getElementById('InitIndicator'));
+render(<Nav />, document.getElementById('InitNavigation'));
+render(<Social />, document.getElementById('InitSocial'));
+render(<BestPractices />, document.getElementById('BestPractice'));
+render(<BuildTools />, document.getElementById('BuildTools'));
+render(<Frameworks />, document.getElementById('Frameworks'));
 
-// typed
 const options = {
   strings: [
     'a Front End Web Developer',
@@ -26,7 +36,7 @@ const options = {
   loop: true,
   smartBackspace: true,
 };
-let typed = new Typed('#description', options);
+new Typed('#description', options);
 
 // indicator
 $('._init_indicators_item').on('click', function() {

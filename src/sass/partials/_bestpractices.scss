@@ -3,21 +3,36 @@ div._init_best_practices {
   position: relative;
   height: 100vh;
   div._init_inner_best_practices {
-    & > p._init_title {
-      text-align: right;
-      font-size: 125px;
-      z-index: 2;
-      transform: translateX(100px) translateY(50px);
-      &:after {
-        right: 0;
-        left: auto;
+    div._init_inner_best_practices_content {
+      & > p._init_title {
+        text-align: right;
+        font-size: 125px;
+        z-index: 2;
+        transform: translateX(100px) translateY(50px);
+        &:after {
+          right: 0;
+          left: auto;
+        }
+        @include breakpoint(mobile) {
+          text-align: left;
+          transform: translateX(0) translateY(0);
+          font-size: 40px;
+          margin-bottom: 30px;
+          &:after {
+            right: auto;
+            left: 0;
+          }
+        }
       }
-    }
-    ._init_best_practices_content {
-      & > p {
-        font: $roboto;
-        color: $tertiary;
-        font-size: 30px;
+      ._init_best_practices_content {
+        & > p {
+          font: $roboto;
+          color: $tertiary;
+          font-size: 30px;
+          @include breakpoint(mobile) {
+            font-size: 15px;
+          }
+        }
       }
     }
     ._init_video_side {
@@ -38,6 +53,9 @@ div._init_best_practices {
           width: auto;
           object-fit: cover;
         }
+      }
+      @include breakpoint(mobile) {
+        display: none;
       }
     }
   }

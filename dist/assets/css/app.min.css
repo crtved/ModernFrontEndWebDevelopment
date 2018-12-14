@@ -6777,7 +6777,7 @@ div._init_best_practices {
   height: 100vh;
 }
 
-div._init_best_practices div._init_inner_best_practices > p._init_title {
+div._init_best_practices div._init_inner_best_practices div._init_inner_best_practices_content > p._init_title {
   text-align: right;
   font-size: 125px;
   z-index: 2;
@@ -6785,12 +6785,12 @@ div._init_best_practices div._init_inner_best_practices > p._init_title {
   transform: translateX(100px) translateY(50px);
 }
 
-div._init_best_practices div._init_inner_best_practices > p._init_title:after {
+div._init_best_practices div._init_inner_best_practices div._init_inner_best_practices_content > p._init_title:after {
   right: 0;
   left: auto;
 }
 
-div._init_best_practices div._init_inner_best_practices ._init_best_practices_content > p {
+div._init_best_practices div._init_inner_best_practices div._init_inner_best_practices_content ._init_best_practices_content > p {
   font: 400 1em "roboto_monoregular";
   color: #efefef;
   font-size: 30px;
@@ -6827,14 +6827,24 @@ div._init_best_practices div._init_inner_best_practices ._init_video_side ._init
   height: 100vh;
 }
 
-._init_build_tools ._init_inner_build_tools > p._init_title {
+._init_build_tools ._init_inner_build_tools ._init_inner_build_tools_content > p._init_title {
   z-index: 2;
   -webkit-transform: translateX(-100px);
   transform: translateX(-100px);
 }
 
-._init_build_tools ._init_inner_build_tools > p._init_title:after {
+._init_build_tools ._init_inner_build_tools ._init_inner_build_tools_content > p._init_title:after {
   background-color: #efefef;
+}
+
+._init_build_tools ._init_inner_build_tools ._init_inner_build_tools_content ._init_build_content {
+  text-align: right;
+}
+
+._init_build_tools ._init_inner_build_tools ._init_inner_build_tools_content ._init_build_content > p {
+  font: 400 1em "roboto_monoregular";
+  color: #efefef;
+  font-size: 40px;
 }
 
 ._init_build_tools ._init_inner_build_tools ._init_build_side {
@@ -6854,16 +6864,6 @@ div._init_best_practices div._init_inner_best_practices ._init_video_side ._init
   bottom: 130px;
   right: -80%;
   background-color: #efefef;
-}
-
-._init_build_tools ._init_inner_build_tools ._init_build_content {
-  text-align: right;
-}
-
-._init_build_tools ._init_inner_build_tools ._init_build_content > p {
-  font: 400 1em "roboto_monoregular";
-  color: #efefef;
-  font-size: 40px;
 }
 
 ._init_frameworks {
@@ -10640,6 +10640,127 @@ div._init_best_practices div._init_inner_best_practices ._init_video_side ._init
   }
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  ._init_title {
+    font-size: 70px;
+  }
+
+  div._init_container img._init_side_image {
+    display: none;
+  }
+
+  div._init_container div._init_nav {
+    width: 100%;
+  }
+
+  div._init_container div._init_inner_container div._init_indicators {
+    display: none;
+  }
+
+  div._init_container div._init_inner_container div._init_introduction_container ._init_introduction p._init_sub {
+    font-size: 20px;
+  }
+
+  div._init_container div._init_inner_container div._init_introduction_container ._init_introduction p._init_description {
+    font-size: 15px;
+  }
+
+  div._init_container div._init_inner_container div._init_social_container {
+    width: 100%;
+    margin: 1em 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  div._init_container div._init_inner_container div._init_social_container a._init_social_item:nth-of-type(3) {
+    margin: 0;
+  }
+
+  div._init_best_practices div._init_inner_best_practices div._init_inner_best_practices_content > p._init_title {
+    text-align: left;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  div._init_best_practices div._init_inner_best_practices div._init_inner_best_practices_content > p._init_title:after {
+    right: auto;
+    left: 0;
+  }
+
+  div._init_best_practices div._init_inner_best_practices div._init_inner_best_practices_content ._init_best_practices_content > p {
+    font-size: 15px;
+  }
+
+  div._init_best_practices div._init_inner_best_practices ._init_video_side {
+    display: none;
+  }
+
+  ._init_build_tools ._init_inner_build_tools ._init_inner_build_tools_content > p._init_title {
+    text-align: left;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  ._init_build_tools ._init_inner_build_tools ._init_inner_build_tools_content > p._init_title:after {
+    right: auto;
+    left: 0;
+  }
+
+  ._init_build_tools ._init_inner_build_tools ._init_inner_build_tools_content ._init_build_content > p {
+    text-align: left;
+    font-size: 15px;
+  }
+
+  ._init_build_tools ._init_inner_build_tools ._init_inner_build_tools_content ._init_build_content {
+    position: absolute;
+    z-index: 2;
+  }
+
+  ._init_build_tools ._init_inner_build_tools ._init_build_side ._init_terminal {
+    display: none;
+  }
+
+  ._init_build_tools ._init_inner_build_tools ._init_build_side {
+    width: 100%;
+  }
+
+  ._init_frameworks ._init_inner_frameworks ._init_title {
+    text-align: left;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  ._init_frameworks ._init_inner_frameworks ._init_title:after {
+    right: auto;
+    left: 0;
+  }
+
+  ._init_frameworks ._init_inner_frameworks ._init_frameworks_content {
+    background-color: #262626;
+  }
+
+  ._init_frameworks ._init_inner_frameworks ._init_frameworks_content ._init_angular,
+  ._init_frameworks ._init_inner_frameworks ._init_frameworks_content ._init_vue,
+  ._init_frameworks ._init_inner_frameworks ._init_frameworks_content ._init_react {
+    max-width: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+}
+
 @media screen and (prefers-reduced-motion: reduce) {
   .form-control {
     -webkit-transition: none;
@@ -10837,6 +10958,12 @@ div._init_best_practices div._init_inner_best_practices ._init_video_side ._init
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6;
+  }
+}
+
+@media (min-height: 400px) and (max-height: 400px) {
+  ._init_title {
+    font-size: 50px;
   }
 }
 /*# sourceMappingURL=app.min.css.map */

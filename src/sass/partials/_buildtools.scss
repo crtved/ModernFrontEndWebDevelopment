@@ -3,11 +3,39 @@
   position: relative;
   height: 100vh;
   ._init_inner_build_tools {
-    & > p._init_title {
-      z-index: 2;
-      transform: translateX(-100px);
-      &:after {
-        background-color: $tertiary;
+    ._init_inner_build_tools_content {
+      & > p._init_title {
+        z-index: 2;
+        transform: translateX(-100px);
+        &:after {
+          background-color: $tertiary;
+        }
+        @include breakpoint(mobile) {
+          text-align: left;
+          transform: translateX(0) translateY(0);
+          font-size: 40px;
+          margin-bottom: 30px;
+          &:after {
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+      ._init_build_content {
+        text-align: right;
+        & > p {
+          font: $roboto;
+          color: $tertiary;
+          font-size: 40px;
+          @include breakpoint(mobile) {
+            text-align: left;
+            font-size: 15px;
+          }
+        }
+        @include breakpoint(mobile) {
+          position: absolute;
+          z-index: 2;
+        }
       }
     }
     ._init_build_side {
@@ -25,14 +53,13 @@
         bottom: 130px;
         right: -80%;
         background-color: #efefef;
+        @include breakpoint(mobile) {
+          display: none;
+        }
       }
-    }
-    ._init_build_content {
-      text-align: right;
-      & > p {
-        font: $roboto;
-        color: $tertiary;
-        font-size: 40px;
+      @include breakpoint(mobile) {
+        // display: none;
+        width: 100%;
       }
     }
   }

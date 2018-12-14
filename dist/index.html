@@ -39,12 +39,9 @@
   <div class="_init_container" id="introduction">
     <img class="_init_side_image" src="./assets/images/sideart.png" alt="Art">
     <div class="_init_nav">
-      <div class="_init_nav_container">
-        <a id="nav_intro" class="_init_nav_item active" href="#introduction">Introduction</a>
-        <a id="nav_bp" class="_init_nav_item" href="#best_practices">Best Practices</a>
-        <a id="nav_bt" class="_init_nav_item" href="#build_tools">Build Tools</a>
-        <a id="nav_f" class="_init_nav_item" href="#frameworks">Frameworks</a>
-      </div>
+      <!-- navigation component -->
+      <div class="_init_nav_container" id="InitNavigation"></div>
+      <!-- //navigation component -->
     </div>
     <div class="_init_inner_container container">
       <div class="_init_burger">
@@ -52,42 +49,24 @@
         <span class="mid"></span>
         <span class="bot"></span>
       </div>
-      <div class="_init_indicators">
-        <a id="intro" class="_init_indicators_item active" href="#introduction">Introduction</a>
-        <a id="bp" class="_init_indicators_item" href="#best_practices">Best practices</a>
-        <a id="bt" class="_init_indicators_item" href="#build_tools">Build Tools</a>
-        <a id="f" class="_init_indicators_item" href="#frameworks">Frameworks</a>
-      </div>
+      <!-- indicator component -->
+      <div class="_init_indicators" id="InitIndicator"></div>
+      <!-- //indicator component -->
       <div class="_init_introduction_container">
-        <div class="_init_introduction" id="Introduction">
-          <p class="_init_sub">Let's talk about the</p>
-          <h1 class="_init_title" id="introductionTitle"></h1>
-          <p class="_init_description">I'm <span id="description"></span></p>
-          <a class="_init_button" href="#best_practices">Let's Start</a>
-        </div>
+        <!-- app component -->
+        <div class="_init_introduction" id="InitIntroduction"></div>
+        <!-- //app component -->
       </div>
-      <div class="_init_social_container">
-        <a class="_init_social_item" target="_blank" href="https://artisawesm.com">website</a>
-        <a class="_init_social_item" target="_blank" href="https://dev.to/artisawesm">dev</a>
-        <a class="_init_social_item" target="_blank" href="https://github.com/artisawesm">github</a>
-      </div>
+      <!-- social component -->
+      <div class="_init_social_container" id="InitSocial"></div>
+      <!-- //social component -->
     </div>
   </div>
   <div id="best_practices" class="_init_best_practices _init_container">
     <div class="_init_inner_best_practices container">
-      <p class="_init_title">Best Practices</p>
-      <div class="_init_best_practices_content">
-        <p>GIT</p>
-        <p>Preprocessor/Transpiler</p>
-        <p>Semantic Markup</p>
-        <p>SEO</p>
-        <p>Google Analytics</p>
-        <p>SemVer</p>
-        <p>Mobile Responsiveness</p>
-        <p>Code Minification</p>
-        <p>Directory Structure</p>
-        <p>Descriptive Comments</p>
-      </div>
+      <!-- best practice -->
+      <div id="BestPractice" class="_init_inner_best_practices_content"></div>
+      <!-- //best practice -->
       <div class="_init_video_side">
         <div class="_init_video_content">
           <video src="./assets/images/coding.mp4" autoplay loop></video>
@@ -97,50 +76,21 @@
   </div>
   <div id="build_tools" class="_init_build_tools _init_container">
     <div class="_init_inner_build_tools container">
-      <p class="_init_title">Build Tools</p>
+      <!-- build tools -->
+      <div id="BuildTools" class="_init_inner_build_tools_content"></div>
+      <!-- //build tools -->
       <div class="_init_build_side">
         <img class="_init_terminal" src="./assets/images/Terminal.png" alt="terminal">
-      </div>
-      <div class="_init_build_content">
-        <p>Gulp js</p>
-        <p>Webpack</p>
-        <p>Babel</p>
-        <p>Node js</p>
-        <p>Packages</p>
       </div>
     </div>
   </div>
   <div id="frameworks" class="_init_frameworks _init_container">
-    <div class="_init_inner_frameworks container">
-      <p class="_init_title">Frameworks</p>
-      <div class="_init_frameworks_content">
-        <div class="_init_angular">
-          <img src="./assets/images/angular.png" alt="Angular">
-        </div>
-        <div class="_init_vue">
-          <img src="./assets/images/react.png" alt="Angular">
-        </div>
-        <div class="_init_react">
-          <img src="./assets/images/vue.png" alt="Angular">
-        </div>
-      </div>
-    </div>
+    <!-- frameworks -->
+    <div class="_init_inner_frameworks container" id="Frameworks"></div>
+    <!-- //frameworks -->
   </div>
   <!-- Main js file // With jQuery and Bootstrap.js(4) -->
   <script type="text/javascript" src="./assets/js/app.min.js"></script>
-
-  <!-- Google Site Tag: change UA-XXXXX-X to be your site's ID -->
-  <!--
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXX-X');
-      </script>
-    -->
 </body>
 
 </html>

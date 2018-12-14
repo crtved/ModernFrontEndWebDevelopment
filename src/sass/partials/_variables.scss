@@ -37,4 +37,10 @@ $tertiary: #efefef;
     background-color: $secondary;
     width: 200px;
   }
+  @include breakpoint(mobile) {
+    font-size: 70px;
+  }
+  @include breakpoint(mobileLandscape) {
+    font-size: 50px;
+  }
 }

@@ -6,6 +6,9 @@ div._init_container {
     width: auto;
     position: absolute;
     right: 0;
+    @include breakpoint(mobile) {
+      display: none;
+    }
   }
   div._init_nav {
     z-index: 3;
@@ -20,6 +23,9 @@ div._init_container {
     justify-content: center;
     &.open {
       transform: translateX(0);
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
     }
     div._init_nav_container {
       width: 100%;
@@ -110,6 +116,9 @@ div._init_container {
       flex-direction: column;
       justify-content: center;
       z-index: 2;
+      @include breakpoint(mobile) {
+        display: none;
+      }
       a._init_indicators_item {
         display: block;
         font-size: 0;
@@ -142,6 +151,9 @@ div._init_container {
           font: $roboto;
           font-size: 30px;
           margin: 0;
+          @include breakpoint(mobile) {
+            font-size: 20px;
+          }
         }
         p._init_description {
           font: $roboto;
@@ -149,6 +161,9 @@ div._init_container {
           font-size: 30px;
           padding: 30px 0;
           margin: 0;
+          @include breakpoint(mobile) {
+            font-size: 15px;
+          }
           & > span {
             color: $secondary;
           }
@@ -162,6 +177,13 @@ div._init_container {
       left: 0;
       width: 50%;
       z-index: 2;
+      @include breakpoint(mobile) {
+        width: 100%;
+        margin: 1em 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       .opts {
         display: inline-block;
         background: url('../images/social.png');
@@ -186,6 +208,9 @@ div._init_container {
           @extend .opts;
           background-position: -157px 0;
           width: 24px;
+          @include breakpoint(mobile) {
+            margin: 0;
+          }
         }
       }
     }
