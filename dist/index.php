@@ -89,6 +89,15 @@
     <div class="_init_inner_frameworks container" id="Frameworks"></div>
     <!-- //frameworks -->
   </div>
+  <div id="activity" class="_init_activity _init_container">
+    <!-- <form action="add.php" method="POST">
+      <input type="text" name="name">
+      <input type="submit">
+    </form> -->
+    <!-- activity -->
+    <div class="_init_inner_activity container" id="Activity"></div>
+    <!-- //activity -->
+  </div>
   <!-- Main js file // With jQuery and Bootstrap.js(4) -->
   <script type="text/javascript" src="./assets/js/app.min.js"></script>
 </body>

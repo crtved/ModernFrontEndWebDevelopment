@@ -6921,6 +6921,18 @@ div._init_best_practices div._init_inner_best_practices ._init_video_side ._init
   object-fit: contain;
 }
 
+div._init_activity {
+  padding: 3em 0;
+  position: relative;
+  height: 100vh;
+}
+
+div._init_activity div._init_inner_activity p.axios {
+  color: white;
+  font-size: 16px;
+  padding: 1em;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

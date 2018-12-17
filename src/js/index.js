@@ -14,6 +14,7 @@ import Social from './components/Social';
 import BestPractices from './components/BestPractices';
 import BuildTools from './components/BuildTools';
 import Frameworks from './components/Frameworks';
+import Activity from './components/Activity';
 
 render(<App />, document.getElementById('InitIntroduction'));
 render(<Indicator />, document.getElementById('InitIndicator'));
@@ -22,6 +23,7 @@ render(<Social />, document.getElementById('InitSocial'));
 render(<BestPractices />, document.getElementById('BestPractice'));
 render(<BuildTools />, document.getElementById('BuildTools'));
 render(<Frameworks />, document.getElementById('Frameworks'));
+render(<Activity />, document.getElementById('Activity'));
 
 const options = {
   strings: [
@@ -37,6 +39,9 @@ const options = {
   smartBackspace: true,
 };
 new Typed('#description', options);
+
+// ES6
+arr = {};
 
 // indicator
 $('._init_indicators_item').on('click', function() {

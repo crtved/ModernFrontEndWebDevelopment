@@ -53,11 +53,16 @@ const path = {
   },
 };
 
+// For development with XAMPP
+const curDir =
+  'http://localhost/_Art/%23REPOSITORIES/Github/ModernFrontEndWebDevelopment/dist/';
+
 // browsersync config
 const config = {
-  server: {
-    baseDir: 'dist',
-  },
+  // server: {
+  //   baseDir: 'dist',
+  // },
+  proxy: curDir,
   online: true,
   tunnel: true,
 };
@@ -124,7 +129,7 @@ function SCSSPROD() {
 // run initializr
 function INI() {
   browserSync.init(config);
-  watch('dist/*.html').on('change', browserSync.reload);
+  watch('dist/*.php').on('change', browserSync.reload);
   watch(path.src.css, SCSS);
   watch(path.src.js, ES);
 }
