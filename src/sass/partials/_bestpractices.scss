@@ -2,39 +2,76 @@ div._init_best_practices {
   padding: 3em 0;
   position: relative;
   height: 100vh;
+
+  @include breakpoint(s) {
+    background-color: $secondary;
+    height: auto;
+  }
+
+  @include breakpoint(tp) {
+    background-color: $primary;
+    height: 100vh;
+  }
+
   div._init_inner_best_practices {
-    div._init_inner_best_practices_content {
-      & > p._init_title {
+    &>p._init_title {
+      text-align: right;
+      font-size: 125px;
+      transform: translateX(100px) translateY(50px);
+      z-index: 2;
+
+      @include breakpoint(s) {
+        font-size: $mobilefont_title;
+        transform: translateX(0) translateY(0);
+        text-align: left;
+      }
+
+      @include breakpoint(tp) {
         text-align: right;
         font-size: 125px;
-        z-index: 2;
         transform: translateX(100px) translateY(50px);
-        &:after {
-          right: 0;
-          left: auto;
-        }
-        @include breakpoint(mobile) {
-          text-align: left;
-          transform: translateX(0) translateY(0);
-          font-size: 40px;
-          margin-bottom: 30px;
-          &:after {
-            right: auto;
-            left: 0;
-          }
-        }
       }
-      ._init_best_practices_content {
-        & > p {
-          font: $roboto;
-          color: $tertiary;
-          font-size: 30px;
-          @include breakpoint(mobile) {
-            font-size: 15px;
-          }
+
+      &:after {
+        right: 0;
+        left: auto;
+
+        @include breakpoint(s) {
+          width: 100%;
+          background-color: white;
+        }
+
+        @include breakpoint(tp) {
+          width: 200px;
+          background-color: $secondary;
         }
       }
     }
+
+    ._init_best_practices_content {
+      @include breakpoint(s) {
+        margin-top: 2em;
+      }
+
+      @include breakpoint(tp) {
+        margin-top: 0;
+      }
+
+      &>p {
+        font: $roboto;
+        color: $tertiary;
+        font-size: 30px;
+
+        @include breakpoint(s) {
+          font-size: 16px;
+        }
+
+        @include breakpoint(tp) {
+          font-size: 30px;
+        }
+      }
+    }
+
     ._init_video_side {
       position: absolute;
       right: 0;
@@ -42,20 +79,27 @@ div._init_best_practices {
       background-color: $secondary;
       height: 70%;
       width: 500px;
+
+      @include breakpoint(s) {
+        display: none;
+      }
+
+      @include breakpoint(tp) {
+        display: block;
+      }
+
       ._init_video_content {
         background-color: white;
         height: 100%;
         width: 100%;
         transform: translateX(-100px) translateY(-100px);
         overflow: hidden;
-        & > video {
+
+        &>video {
           height: 100%;
           width: auto;
           object-fit: cover;
         }
-      }
-      @include breakpoint(mobile) {
-        display: none;
       }
     }
   }

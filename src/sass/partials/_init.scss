@@ -1,15 +1,23 @@
 div._init_container {
   background-color: $primary;
   position: relative;
+
   img._init_side_image {
     height: 100%;
     width: auto;
     position: absolute;
     right: 0;
-    @include breakpoint(mobile) {
+
+    @include breakpoint(s) {
       display: none;
     }
+
+    @include breakpoint(tp) {
+      display: block;
+    }
+
   }
+
   div._init_nav {
     z-index: 3;
     height: 100vh;
@@ -21,18 +29,18 @@ div._init_container {
     transition: all 0.5s ease;
     display: flex;
     justify-content: center;
+
     &.open {
       transform: translateX(0);
     }
-    @include breakpoint(mobile) {
-      width: 100%;
-    }
+
     div._init_nav_container {
       width: 100%;
       margin-left: 20%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       a._init_nav_item {
         font: $roboto;
         font-size: 25px;
@@ -41,10 +49,12 @@ div._init_container {
         text-decoration: none;
         transition: all 0.5s ease;
         border-left: 3px solid transparent;
+
         &:hover,
         &:focus {
           text-decoration: none;
         }
+
         &.active {
           border-left: 3px solid $tertiary;
           padding-left: 15px;
@@ -52,8 +62,10 @@ div._init_container {
       }
     }
   }
+
   div._init_inner_container {
     height: 100vh;
+
     div._init_burger {
       width: 40px;
       height: auto;
@@ -66,28 +78,42 @@ div._init_container {
       z-index: 4;
       cursor: pointer;
       transition: all 0.5s ease;
+
+      @include breakpoint(s) {
+        margin: 1em;
+      }
+
+      @include breakpoint(tp) {
+        margin: 2em 2em 0 0;
+      }
+
       &.open {
         transform: rotate(-402deg);
-        & > span {
+
+        &>span {
           &.top {
             opacity: 0;
           }
+
           &.mid {
             transform: rotate(-90deg);
           }
+
           &.bot {
             transform: translateY(-11px);
           }
         }
       }
+
       &:hover {
-        & > span {
+        &>span {
           &.top {
             width: 100%;
           }
         }
       }
-      & > span {
+
+      &>span {
         display: block;
         height: 5px;
         width: 100%;
@@ -95,15 +121,17 @@ div._init_container {
         border-radius: 5px;
         margin: 3px 0;
         transition: all 0.5s ease;
+
         &.top {
           width: 60%;
         }
-        &.mid {
-        }
-        &.bot {
-        }
+
+        &.mid {}
+
+        &.bot {}
       }
     }
+
     div._init_indicators {
       position: fixed;
       left: 0;
@@ -116,19 +144,27 @@ div._init_container {
       flex-direction: column;
       justify-content: center;
       z-index: 2;
-      @include breakpoint(mobile) {
+
+      @include breakpoint(s) {
         display: none;
       }
+
+      @include breakpoint(tp) {
+        display: flex;
+      }
+
       a._init_indicators_item {
         display: block;
         font-size: 0;
         margin: 10px 0;
         margin-left: 32px;
+
         &.active {
           &:before {
             background-color: $secondary;
           }
         }
+
         &:before {
           display: block;
           content: '';
@@ -140,50 +176,71 @@ div._init_container {
         }
       }
     }
+
     div._init_introduction_container {
       height: 100%;
       display: flex;
       justify-content: flex-start;
       align-items: center;
+
       ._init_introduction {
         p._init_sub {
           color: $tertiary;
           font: $roboto;
           font-size: 30px;
           margin: 0;
-          @include breakpoint(mobile) {
-            font-size: 20px;
+
+          @include breakpoint(s) {
+            font-size: 15px;
+          }
+
+          @include breakpoint(tp) {
+            font-size: 30px;
           }
         }
+
         p._init_description {
           font: $roboto;
           color: $tertiary;
           font-size: 30px;
           padding: 30px 0;
           margin: 0;
-          @include breakpoint(mobile) {
-            font-size: 15px;
+
+          @include breakpoint(s) {
+            font-size: 13px;
           }
-          & > span {
+
+          @include breakpoint(tp) {
+            font-size: 30px;
+          }
+
+          &>span {
             color: $secondary;
           }
         }
       }
     }
+
     div._init_social_container {
       margin: 0 0 2em 2em;
+      width: 50%;
       position: fixed;
       bottom: 0;
       left: 0;
-      width: 50%;
       z-index: 2;
-      @include breakpoint(mobile) {
+
+      @include breakpoint(s) {
+        margin: 1em auto;
         width: 100%;
-        margin: 1em 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 0 1em;
       }
+
+      @include breakpoint(tp) {
+        margin: 0 0 2em 2em;
+        width: 50%;
+        padding: 0;
+      }
+
       .opts {
         display: inline-block;
         background: url('../images/social.png');
@@ -195,22 +252,23 @@ div._init_container {
         height: 40px;
         max-width: 40px;
       }
+
       a._init_social_item {
         margin-right: 2em;
+
         &:nth-of-type(1) {
           @extend .opts;
         }
+
         &:nth-of-type(2) {
           @extend .opts;
           background-position: -75px 0;
         }
+
         &:nth-of-type(3) {
           @extend .opts;
           background-position: -157px 0;
           width: 24px;
-          @include breakpoint(mobile) {
-            margin: 0;
-          }
         }
       }
     }

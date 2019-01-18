@@ -2,42 +2,44 @@
   padding: 3em 0;
   position: relative;
   height: 100vh;
+
+  @include breakpoint(s) {
+    height: auto;
+  }
+
+  @include breakpoint(tp) {
+    height: 100vh;
+  }
+
   ._init_inner_build_tools {
-    ._init_inner_build_tools_content {
-      & > p._init_title {
-        z-index: 2;
-        transform: translateX(-100px);
-        &:after {
-          background-color: $tertiary;
-        }
-        @include breakpoint(mobile) {
-          text-align: left;
-          transform: translateX(0) translateY(0);
-          font-size: 40px;
-          margin-bottom: 30px;
-          &:after {
-            right: auto;
-            left: 0;
-          }
-        }
+    &>p._init_title {
+      z-index: 2;
+      transform: translateX(-100px);
+
+      @include breakpoint(s) {
+        font-size: $mobilefont_title;
+        transform: translateX(0) translateY(0);
+        text-align: left;
       }
-      ._init_build_content {
-        text-align: right;
-        & > p {
-          font: $roboto;
-          color: $tertiary;
-          font-size: 40px;
-          @include breakpoint(mobile) {
-            text-align: left;
-            font-size: 15px;
-          }
+
+      @include breakpoint(tp) {
+        font-size: 125px;
+        transform: translateX(-100px);
+      }
+
+      &:after {
+        background-color: $tertiary;
+
+        @include breakpoint(s) {
+          width: 100%;
         }
-        @include breakpoint(mobile) {
-          position: absolute;
-          z-index: 2;
+
+        @include breakpoint(tp) {
+          width: 200px;
         }
       }
     }
+
     ._init_build_side {
       background-color: $secondary;
       height: 85%;
@@ -46,6 +48,15 @@
       left: 0;
       bottom: 0;
       z-index: 1;
+
+      @include breakpoint(s) {
+        display: none;
+      }
+
+      @include breakpoint(tp) {
+        display: block;
+      }
+
       ._init_terminal {
         height: 50%;
         position: absolute;
@@ -53,13 +64,34 @@
         bottom: 130px;
         right: -80%;
         background-color: #efefef;
-        @include breakpoint(mobile) {
-          display: none;
-        }
       }
-      @include breakpoint(mobile) {
-        // display: none;
-        width: 100%;
+    }
+
+    ._init_build_content {
+      text-align: right;
+
+      @include breakpoint(s) {
+        text-align: left;
+        margin-top: 2em;
+      }
+
+      @include breakpoint(tp) {
+        text-align: right;
+        margin: 0;
+      }
+
+      &>p {
+        font: $roboto;
+        color: $tertiary;
+        font-size: 40px;
+
+        @include breakpoint(s) {
+          font-size: 16px;
+        }
+
+        @include breakpoint(tp) {
+          font-size: 40px;
+        }
       }
     }
   }

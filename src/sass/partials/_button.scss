@@ -7,14 +7,25 @@
   position: relative;
   z-index: 1;
   padding-left: 10px;
+
+  @include breakpoint(s) {
+    font-size: 15px;
+  }
+
+  @include breakpoint(tp) {
+    font-size: 25px;
+  }
+
   &:hover,
   &:focus {
     color: $tertiary;
     text-decoration: none;
+
     &:after {
       height: 50px;
     }
   }
+
   &:after {
     content: '';
     display: block;
@@ -26,5 +37,13 @@
     height: 25px;
     z-index: -1;
     transition: all 0.2s ease;
+
+    @include breakpoint(s) {
+      bottom: -15px;
+    }
+
+    @include breakpoint(tp) {
+      bottom: -10px;
+    }
   }
 }

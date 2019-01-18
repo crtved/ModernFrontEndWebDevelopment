@@ -1,4 +1,11 @@
-const { gulp, series, parallel, watch, src, dest } = require('gulp'),
+const {
+  gulp,
+  series,
+  parallel,
+  watch,
+  src,
+  dest
+} = require('gulp'),
   chalk = require('chalk'),
   log = require('fancy-log'),
   group = require('gulp-group-css-media-queries'),
@@ -6,6 +13,7 @@ const { gulp, series, parallel, watch, src, dest } = require('gulp'),
   webpack = require('webpack'),
   wpstream = require('webpack-stream'),
   wpconfig = require('./webpack.config.js'),
+  qrcode = require('qrcode-terminal'),
   browserSync = require('browser-sync').create();
 
 // ===========
@@ -24,20 +32,15 @@ const browsers = ['last 2 version', 'ie >= 11', 'safari >= 9.1'];
 
 // default messages
 const msg = {
-  wait:
-    chalk.bgGreen.black('\n\n Wait ') +
+  wait: chalk.bgGreen.black('\n\n Wait ') +
     chalk.bold.green(' Almost there...\n\n'),
-  error:
-    chalk.bgRed.black('\n\n OOPS! ') +
+  error: chalk.bgRed.black('\n\n OOPS! ') +
     chalk.bold.red(" I don't feel so good...\n\n"),
-  success:
-    chalk.bgCyan.black('\n\n SUCCESS! ') +
+  success: chalk.bgCyan.black('\n\n SUCCESS! ') +
     chalk.bold.cyan(' Initializr build complete!\n\n'),
-  js:
-    chalk.bgYellow.black('\n\n SCRIPT ') +
+  js: chalk.bgYellow.black('\n\n SCRIPT ') +
     chalk.yellow(' JS Build successfully! \n\n'),
-  css:
-    chalk.bgMagenta.black('\n\n STYLE ') +
+  css: chalk.bgMagenta.black('\n\n STYLE ') +
     chalk.magenta(' CSS Compiled successfully! \n\n'),
 };
 
@@ -53,18 +56,13 @@ const path = {
   },
 };
 
-// For development with XAMPP
-const curDir =
-  'http://localhost/_Art/%23REPOSITORIES/Github/ModernFrontEndWebDevelopment/dist/';
-
 // browsersync config
 const config = {
-  // server: {
-  //   baseDir: 'dist',
-  // },
-  proxy: curDir,
+  server: {
+    baseDir: 'dist',
+  },
   online: true,
-  tunnel: true,
+  tunnel: "initializr",
 };
 // ===========
 
@@ -85,17 +83,28 @@ function ES() {
 
 function SCSS() {
   return src(path.src.css)
-    .pipe($.sourcemaps.init({ loadMaps: true, largeFile: true }))
+    .pipe($.sourcemaps.init({
+      loadMaps: true,
+      largeFile: true
+    }))
     .pipe($.plumber())
     .pipe(
       $.sass
-        .sync({ outputStyle: 'expanded', errLogToConsole: true })
-        .on('error', function(error) {
-          log(msg.error + error.message);
-        }),
+      .sync({
+        outputStyle: 'expanded',
+        errLogToConsole: true
+      })
+      .on('error', function (error) {
+        log(msg.error + error.message);
+      }),
     )
-    .pipe($.autoprefixer({ browsers: browsers }))
-    .pipe($.rename({ basename: 'app', suffix: '.min' }))
+    .pipe($.autoprefixer({
+      browsers: browsers
+    }))
+    .pipe($.rename({
+      basename: 'app',
+      suffix: '.min'
+    }))
     .pipe(group())
     .pipe($.sourcemaps.write('./'))
     .pipe(dest(path.dist.css))
@@ -129,7 +138,10 @@ function SCSSPROD() {
 // run initializr
 function INI() {
   browserSync.init(config);
-  watch('dist/*.php').on('change', browserSync.reload);
+  qrcode.generate('https://initializr.localtunnel.me', {
+    small: true
+  });
+  watch('dist/*.html').on('change', browserSync.reload);
   watch(path.src.css, SCSS);
   watch(path.src.js, ES);
 }

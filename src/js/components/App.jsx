@@ -1,22 +1,51 @@
 import React, { Component } from 'react';
+import Header from './Header';
+import BestPractices from './BestParactices';
+import BuildTools from './BuildTools';
+import Frameworks from './Frameworks';
 
 class App extends Component {
   state = {
-    sub: `Let's talk about the`,
-    title: 'Modern Web Dev',
+    stack: [
+      {
+        id: 'nav_intro',
+        name: 'Introduction',
+        link: '#introduction',
+        active: true,
+      },
+      {
+        id: 'nav_bp',
+        name: 'Best Practices',
+        link: '#best_practices',
+        active: false,
+      },
+      {
+        id: 'nav_bt',
+        name: 'Build Tools',
+        link: '#build_tools',
+        active: false,
+      },
+      {
+        id: 'nav_f',
+        name: 'Frameworks',
+        link: '#frameworks',
+        active: false,
+      },
+    ],
   };
   render() {
-    let { sub, title } = this.state;
+    const section = [...this.state.stack];
+    const getSection = sid => {
+      const result = section.filter(s => s.id === sid)[0];
+      return result.name;
+    };
+
     return (
       <React.Fragment>
-        <p className='_init_sub'>{sub}</p>
-        <h1 className='_init_title'>{title}</h1>
-        <p className='_init_description'>
-          I'm <span id='description' />
-        </p>
-        <a href='#best_practices' className='_init_button'>
-          Let's Start
-        </a>
+        <Header navigation={this.state.stack} />
+        <BestPractices title={getSection('nav_bp')} />
+        <BuildTools title={getSection('nav_bt')} />
+        <Frameworks title={getSection('nav_f')} />
       </React.Fragment>
     );
   }

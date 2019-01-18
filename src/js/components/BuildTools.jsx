@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 
 class BuildTools extends Component {
-  state = {
-    title: 'Build Tools',
-    items: [
-      { name: 'Gulp JS' },
-      { name: 'Webpack' },
-      { name: 'Babel' },
-      { name: 'Node Js' },
-      { name: 'Packages' },
-    ],
-  };
+  state = {};
   render() {
-    let { title } = this.state;
-    const items = [...this.state.items];
     return (
       <React.Fragment>
-        <p className='_init_title'>{title}</p>
-        <div className='_init_build_content'>
-          {items.map(i => (
-            <p key={i.name}>{i.name}</p>
-          ))}
+        <div id='build_tools' className='_init_build_tools _init_container'>
+          <div className='_init_inner_build_tools container'>
+            <p className='_init_title'>{this.props.title}</p>
+            <div className='_init_build_side'>
+              <img
+                className='_init_terminal'
+                src='./assets/images/Terminal.png'
+                alt='terminal'
+              />
+            </div>
+            <div className='_init_build_content'>
+              <p>Gulp js</p>
+              <p>Webpack</p>
+              <p>Babel</p>
+              <p>Node js</p>
+              <p>Packages</p>
+            </div>
+          </div>
         </div>
       </React.Fragment>
     );

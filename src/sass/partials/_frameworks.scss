@@ -2,24 +2,44 @@
   padding: 3em 0;
   position: relative;
   height: 100vh;
+  background-color: $primary;
+
+  @include breakpoint(s) {
+    height: auto;
+  }
+
+  @include breakpoint(tp) {
+    height: 100vh;
+  }
+
   ._init_inner_frameworks {
     ._init_title {
       text-align: right;
+
+      @include breakpoint(s) {
+        font-size: $mobilefont_title;
+        text-align: left;
+      }
+
+      @include breakpoint(tp) {
+        font-size: 125px;
+        text-align: right;
+      }
+
       &:after {
         right: 0;
         left: auto;
-      }
-      @include breakpoint(mobile) {
-        text-align: left;
-        transform: translateX(0) translateY(0);
-        font-size: 40px;
-        margin-bottom: 30px;
-        &:after {
-          right: auto;
-          left: 0;
+
+        @include breakpoint(s) {
+          width: 100%;
+        }
+
+        @include breakpoint(tp) {
+          width: 200px;
         }
       }
     }
+
     ._init_frameworks_content {
       display: flex;
       flex-direction: row;
@@ -27,9 +47,16 @@
       left: 0;
       right: 0;
       margin: 1em 0;
-      @include breakpoint(mobile) {
-        background-color: #262626;
+
+      @include breakpoint(s) {
+        flex-direction: column;
+        background-color: $primary;
       }
+
+      @include breakpoint(tp) {
+        flex-direction: row;
+      }
+
       ._init_angular,
       ._init_vue,
       ._init_react {
@@ -38,14 +65,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        @include breakpoint(mobile) {
-          max-width: 100%;
+
+        @include breakpoint(s) {
           flex-basis: 100%;
+          max-width: 100%;
         }
-        & > img {
-          width: 100%;
-          height: 50%;
-          object-fit: contain;
+
+        &>img {
+          width: 200px;
+          height: auto;
+          // object-fit: contain;
         }
       }
     }

@@ -4,6 +4,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'roboto_monoregular';
   src: url('../fonts/robotomono-regular-webfont.woff') format('woff');
@@ -13,6 +14,7 @@
 
 $bebas: 400 1em 'bebas_neuebold';
 $roboto: 400 1em 'roboto_monoregular';
+$mobilefont_title: 45px;
 
 // colors
 $primary: #262626;
@@ -27,6 +29,7 @@ $tertiary: #efefef;
   position: relative;
   margin: 0;
   padding: 30px 0;
+
   &:after {
     display: block;
     content: '';
@@ -37,10 +40,14 @@ $tertiary: #efefef;
     background-color: $secondary;
     width: 200px;
   }
-  @include breakpoint(mobile) {
-    font-size: 70px;
+
+  @include breakpoint(s) {
+    font-size: 60px;
+    padding-top: 0;
   }
-  @include breakpoint(mobileLandscape) {
-    font-size: 50px;
+
+  @include breakpoint(tp) {
+    font-size: 90px;
+    padding-top: 30px;
   }
 }

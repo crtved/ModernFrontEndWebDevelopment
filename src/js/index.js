@@ -5,29 +5,17 @@ import jQuery from 'jquery';
 window.$ = jQuery;
 import 'bootstrap';
 import Typed from 'typed.js';
+
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
-import Nav from './components/Nav';
-import Indicator from './components/Indicator';
-import Social from './components/Social';
-import BestPractices from './components/BestPractices';
-import BuildTools from './components/BuildTools';
-import Frameworks from './components/Frameworks';
-import Activity from './components/Activity';
 
-render(<App />, document.getElementById('InitIntroduction'));
-render(<Indicator />, document.getElementById('InitIndicator'));
-render(<Nav />, document.getElementById('InitNavigation'));
-render(<Social />, document.getElementById('InitSocial'));
-render(<BestPractices />, document.getElementById('BestPractice'));
-render(<BuildTools />, document.getElementById('BuildTools'));
-render(<Frameworks />, document.getElementById('Frameworks'));
-render(<Activity />, document.getElementById('Activity'));
+render(<App />, document.getElementById('initialize'));
 
+// typed
 const options = {
   strings: [
-    'a Front End Web Developer',
+    'a Senior Front End Web Developer',
     'a UX/UI enthusiast',
     'an aspiring Graphic Designer',
     'Art San Diego',
@@ -38,10 +26,7 @@ const options = {
   loop: true,
   smartBackspace: true,
 };
-new Typed('#description', options);
-
-// ES6
-arr = {};
+let typed = new Typed('#description', options);
 
 // indicator
 $('._init_indicators_item').on('click', function() {
