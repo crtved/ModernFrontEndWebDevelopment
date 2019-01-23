@@ -3,9 +3,21 @@ import React, { Component } from 'react';
 class Frameworks extends Component {
   state = {
     frameworks: [
-      { image: './assets/images/angularjs.png', name: 'angular' },
-      { image: './assets/images/reactjs.png', name: 'react' },
-      { image: './assets/images/vuejs.png', name: 'vue' },
+      {
+        image: './assets/images/angularjs.png',
+        name: 'angular',
+        link: 'https://angularjs.org/',
+      },
+      {
+        image: './assets/images/reactjs.png',
+        name: 'react',
+        link: 'https://reactjs.org/',
+      },
+      {
+        image: './assets/images/vuejs.png',
+        name: 'vue',
+        link: 'https://vuejs.org/',
+      },
     ],
   };
   render() {
@@ -21,7 +33,9 @@ class Frameworks extends Component {
                   <div
                     key={framework.name}
                     className={`_init_${framework.name}`}>
-                    <img src={framework.image} alt={framework.name} />
+                    <a href={framework.link} target='_blank' rel='noopen'>
+                      <img src={framework.image} alt={framework.name} />
+                    </a>
                   </div>
                 );
               })}

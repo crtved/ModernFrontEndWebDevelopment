@@ -16,11 +16,21 @@ class BuildTools extends Component {
               />
             </div>
             <div className='_init_build_content'>
-              <p>Gulp js</p>
-              <p>Webpack</p>
-              <p>Babel</p>
-              <p>Node js</p>
-              <p>Packages</p>
+              <a href='https://gulpjs.com/' target='_blank' rel='noopen'>
+                Gulp js
+              </a>
+              <a href='https://webpack.js.org/' target='_blank' rel='noopen'>
+                Webpack
+              </a>
+              <a href='https://babeljs.io/' target='_blank' rel='noopen'>
+                Babel
+              </a>
+              <a href='https://nodejs.org/en/' target='_blank' rel='noopen'>
+                Node js
+              </a>
+              <a href='' target='_blank' rel='noopen'>
+                Packages
+              </a>
             </div>
           </div>
         </div>

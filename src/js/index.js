@@ -7,10 +7,20 @@ import 'bootstrap';
 import Typed from 'typed.js';
 
 import React from 'react';
-import { render } from 'react-dom';
+import {
+  render
+} from 'react-dom';
 import App from './components/App';
+import qrc from 'qrcode-terminal';
 
-render(<App />, document.getElementById('initialize'));
+render( < App / > , document.getElementById('initialize'));
+
+qrc.generate('https://initializr.localtunnel.me', {
+  small: true
+}, (qrcode) => {
+  console.log('Scan for mobile debugging');
+  console.log(qrcode);
+});
 
 // typed
 const options = {
@@ -29,26 +39,26 @@ const options = {
 let typed = new Typed('#description', options);
 
 // indicator
-$('._init_indicators_item').on('click', function() {
+$('._init_indicators_item').on('click', function () {
   $('._init_indicators_item').removeClass('active');
   $(this).addClass('active');
 });
 
 // burger
-$('._init_burger').on('click', function() {
+$('._init_burger').on('click', function () {
   $(this).toggleClass('open');
   $('._init_nav').toggleClass('open');
 });
 
 // navigation
-$('._init_nav_item').on('click', function() {
+$('._init_nav_item').on('click', function () {
   $('._init_nav_item').removeClass('active');
   $(this).addClass('active');
 });
 
 // scroll
-let scrll = function(target, ind) {
-  $(document).on('scroll', function() {
+let scrll = function (target, ind) {
+  $(document).on('scroll', function () {
     if ($(this).scrollTop() >= $(target).position().top) {
       $('._init_indicators_item').removeClass('active');
       $(ind).addClass('active');
@@ -61,8 +71,8 @@ scrll('#build_tools', '#bt');
 scrll('#frameworks', '#f');
 
 // nav
-let navi = function(target, ind) {
-  $(document).on('scroll', function() {
+let navi = function (target, ind) {
+  $(document).on('scroll', function () {
     if ($(this).scrollTop() >= $(target).position().top) {
       $('._init_nav_item').removeClass('active');
       $(ind).addClass('active');
@@ -74,11 +84,10 @@ navi('#best_practices', '#nav_bp');
 navi('#build_tools', '#nav_bt');
 navi('#frameworks', '#nav_f');
 
-$(document).on('click', 'a[href^="#"]', function(event) {
+$(document).on('click', 'a[href^="#"]', function (event) {
   event.preventDefault();
 
-  $('html, body').animate(
-    {
+  $('html, body').animate({
       scrollTop: $($.attr(this, 'href')).offset().top,
     },
     800,
