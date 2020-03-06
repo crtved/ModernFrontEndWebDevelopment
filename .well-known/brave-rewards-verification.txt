@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: artsandiego-mfewd.netlify.com
+Token: cde85679cb0006a4eb077d3e735f2f717c67b8d6ff7edb7c1bf5bc9c1ca7bb05
